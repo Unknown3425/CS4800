@@ -1,0 +1,82 @@
+@startuml
+abstract employee{
+    setFirstName
+    setLastName
+    getSSN
+}
+class salariedEmployee{
+    baseSalary
+    \getFirstName
+    \getLastName
+}
+class hourlyEmployee{
+    wage
+    hoursWorked
+    \getFirstName
+    \getLastName
+}
+class commissionEmployee{
+    commissionRate
+    grossSales
+    \getFirstName
+    \getLastName
+}
+
+employee <|-- salariedEmployee
+employee <|-- hourlyEmployee
+employee <|-- commissionEmployee
+@enduml
+
+@startuml
+abstract ship{
+    setShipName
+    getYearBuild
+}
+class cargoShip{
+    cargoCapacity
+    \getShipName
+}
+class cruiseShip{
+    maxPassengers
+    \getShipName
+}
+
+ship <|-- cargoShip
+ship <|-- cruiseShip
+
+@enduml
+
+@startuml
+class  course{
+    getInstructor
+    getTextbook
+}
+class  instructor{
+    getFirstName
+    getLastName
+    getOfficeNumber
+}
+class  textbook{
+    getTitle
+    getAuthor
+    getPublisher
+}
+
+course o-- instructor
+course o-- textbook
+
+@enduml
+
+@startuml
+object folder{
+    getArraySubFolders
+    getArrayFiles
+}
+object file{
+    getName
+    getFile
+}
+
+folder *-- file
+
+@enduml

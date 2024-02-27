@@ -1,0 +1,55 @@
+@startuml
+object ship
+object cruiseShip
+object cargoShip
+
+ship : getShipName
+ship : getYearBuilt
+
+cargoShip : getCapacity
+cargoShip : getShipName
+
+cruiseShip : getPassengers
+cruiseShip : getShipName
+
+ship <|-- cruiseShip
+ship <|-- cargoShip
+
+@enduml
+
+@startuml
+object  driver
+object  course
+object  instructor
+object  textbook
+
+course : getInstructor
+course : getTextbook
+
+textbook : getTitle
+textbook : getAuthor
+textbook : getPublisher
+
+instructor : getFirstName
+instructor : getLastName
+
+driver o-- course
+course o-- instructor
+course o-- textbook
+
+@enduml
+
+@startuml
+object folder{
+    getArraySubFolders
+    getArrayFiles
+}
+object driver
+object file{
+    getName
+}
+
+file *-- driver
+folder *-- file
+
+@enduml
